@@ -6,29 +6,35 @@ namespace EmployeewageComputation
 {
 
     class EmployeeWage
-    {///constants
-        const int PER_HR_WAGE = 20;
-        const int FULL_DAY_HR = 8;
-        const int PART_TIME_HR = 4;
+    {   ///constants
+        const int IS_PART_TIME = 1;
+        const int IS_FULL_TIME = 2;
+        const int EMP_WAGE_PER_HOUR = 20;
         //variables
-        int totalWage;
+        int empHrs = 0;
+        int empWage = 0;
         /// <summary>
-        /// This Method is Used to Check Employee Part Time And Full Time WAge
+        /// This Method is Used to Check Employee Part Time Employee And Wage
         /// </summary>
-        public void DailyWage()
+        public void PartTimeEmp()
                   
         {
             Random random = new Random();
-            int empCheck = random.Next(0, 2);
-            if (empCheck == 0)
+            int empCheck = random.Next(0, 3);
+            if (empCheck == IS_PART_TIME)
             {
-                totalWage = PER_HR_WAGE * FULL_DAY_HR;
+                empHrs = 4;
+            }
+            else if (empCheck == IS_FULL_TIME)
+            {
+                empHrs = 8;
             }
             else
             {
-                totalWage = PER_HR_WAGE * PART_TIME_HR;
+                empHrs = 0;
             }
-            Console.WriteLine("Total emp wage" + totalWage);
+            empWage = empHrs * EMP_WAGE_PER_HOUR;
+                Console.WriteLine("Emp wage : " + empWage);
 
         }
         
