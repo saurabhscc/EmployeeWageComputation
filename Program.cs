@@ -7,7 +7,10 @@ namespace EmployeewageComputation
         static void Main(string[] args)
         {
             EmployeeWage empwage = new EmployeeWage();
-            empwage.EmpMonthWage();
+            empwage.ComputeEmpWage("Dmart",20,2,10);
+            empwage.ComputeEmpWage("Reliance", 10, 4, 20);
+
         }
+
     }
 }
